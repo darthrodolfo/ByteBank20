@@ -15,10 +15,10 @@ Future<Database> createDatabase() {
 }
 
 Future<int> save(Contact contact) {
-  createDatabase().then((db) {
+  return createDatabase().then((db) {
     final Map<String, dynamic> contactMap = new Map();
     contactMap['name'] = contact.name;
-    contactMap['accountNumber'] = contact.accountNumber;
+    contactMap['account_Number'] = contact.accountNumber;
     return db.insert('contacts', contactMap);
   });
 }
